@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/image_nav_graph"
+    app:startDestination="@id/uploadImageFragment">
+
+    <fragment
+        android:id="@+id/uploadImageFragment"
+        android:name="com.animated_anand.codeland.imageUpload.UploadImageFragment"
+        android:label="fragment_upload_image"
+        tools:layout="@layout/fragment_upload_image" >
+        <action
+            android:id="@+id/action_uploadImageFragment_to_imageViewFragment"
+            app:destination="@id/imageViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageViewFragment"
+        android:name="com.animated_anand.codeland.imageUpload.ImageViewFragment"
+        android:label="fragment_image_view"
+        tools:layout="@layout/fragment_image_view" >
+        <action
+            android:id="@+id/action_imageViewFragment_to_uploadImageFragment"
+            app:destination="@id/uploadImageFragment"
+            app:popUpTo="@id/imageViewFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
